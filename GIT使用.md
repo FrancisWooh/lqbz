@@ -44,3 +44,44 @@ Initialized empty Git repository in D:/Note/Wiki/.git/
 git add git使用.md
 ```
 
+第二步，用命令`git commit`告诉`Git`，把文件提交到仓库
+
+```
+$ git commit -m "first commit"
+[master (root-commit) dc0e2a2] first commit
+ 1 file changed, 46 insertions(+)
+ create mode 100644 "GIT\344\275\277\347\224\250.md"
+
+fancy@ECBUPJKT MINGW64 /d/note/wiki (master)
+$
+
+```
+
+`-m` 参数是用来注释你提交的信息的，这样以后才知道这次提交时用来干嘛
+
+或者你嫌弃文件太多，一次次add感觉很麻烦，那么可以试试使用`git add .`提交，`.`表示提交当前目录所有文件
+
+```
+git add . 
+或者
+git add *
+```
+
+## 查看当前新增或者修改的文件
+
+实际使用中你不止只有一个文件，或新增或修改多个文件，可能时间一久就忘了有多少文件需要提交 这里模拟一下，首先新建一个`hello.txt`的文件，然后修改`readme.txt`内容，添加一句`come on baby`. 这样就有2个文件需要提交了。 我们使用`git status`命令来查看当前状态,是否有未提交的文件
+
+```
+git status
+```
+
+![image-20250713142854210](D:\Note\Wiki\resource\image-20250713142854210.png)
+
+如图，可以看到红色的字体显示的一个`GIT***.md`被修改过了，但还没有准备提交的修改，另外一个是`Untracked files: hello.txt`和resource目录，表示新增的文件。
+
+这时候准备把上面2个文件都提交，使用命令：
+
+```
+git add .
+```
+
